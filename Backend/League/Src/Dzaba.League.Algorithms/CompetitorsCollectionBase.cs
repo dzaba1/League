@@ -10,7 +10,7 @@ namespace Dzaba.League.Algorithms
     {
         protected CompetitorsCollectionBase(Dictionary<TId, TValue> dictionary)
         {
-            Require.NotNull(dictionary, nameof(dictionary));
+            //Require.NotNull(dictionary, nameof(dictionary));
 
             Dictionary = dictionary;
         }
@@ -37,5 +37,12 @@ namespace Dzaba.League.Algorithms
         }
 
         public int Count => Dictionary.Count;
+
+        public bool ContainsCompetitor(TId competitorId)
+        {
+            return Dictionary.ContainsKey(competitorId);
+        }
+
+        public TValue this[TId competitorId] => Dictionary[competitorId];
     }
 }
