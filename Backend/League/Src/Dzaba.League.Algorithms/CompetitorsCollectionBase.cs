@@ -10,7 +10,7 @@ namespace Dzaba.League.Algorithms
     {
         protected CompetitorsCollectionBase(Dictionary<TId, TValue> dictionary)
         {
-            //Require.NotNull(dictionary, nameof(dictionary));
+            Require.NotNull(dictionary, nameof(dictionary));
 
             Dictionary = dictionary;
         }

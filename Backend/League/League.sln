@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.League.Algorithms", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.League.Contracts", "Src\Dzaba.League.Contracts\Dzaba.League.Contracts.csproj", "{C2CD8831-183C-410D-98F2-BD5245E942C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.League.Algorithms.Tests", "Src\Dzaba.League.Algorithms.Tests\Dzaba.League.Algorithms.Tests.csproj", "{CF0ACC5B-CD70-4F73-8ACC-9263408FF907}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C2CD8831-183C-410D-98F2-BD5245E942C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2CD8831-183C-410D-98F2-BD5245E942C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2CD8831-183C-410D-98F2-BD5245E942C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF0ACC5B-CD70-4F73-8ACC-9263408FF907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF0ACC5B-CD70-4F73-8ACC-9263408FF907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF0ACC5B-CD70-4F73-8ACC-9263408FF907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF0ACC5B-CD70-4F73-8ACC-9263408FF907}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

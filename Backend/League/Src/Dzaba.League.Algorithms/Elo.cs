@@ -6,9 +6,12 @@ namespace Dzaba.League.Algorithms
 {
     public static class Elo
     {
-        public static Ranking<T> Build<T>(IEnumerable<Scores<T>> matches, ScoreCheckOptions scoreCheckOptions, EloOptions eloOptions)
+        public static Ranking<T> Build<T>(IEnumerable<Match<T>> matches, ScoreCheckOptions scoreCheckOptions, EloOptions eloOptions)
             where T : IEquatable<T>
         {
+            Require.NotNull(matches, nameof(matches));
+            Require.NotNull(eloOptions, nameof(eloOptions));
+
             var ranking = new Dictionary<T, double>();
 
             foreach (var match in matches)
@@ -19,7 +22,7 @@ namespace Dzaba.League.Algorithms
             return new Ranking<T>(ranking);
         }
 
-        private static void HandleMatch<T>(Dictionary<T, double> ranking, Scores<T> scores,
+        private static void HandleMatch<T>(Dictionary<T, double> ranking, Match<T> match,
             ScoreCheckOptions scoreCheckOptions, EloOptions eloOptions)
             where T : IEquatable<T>
         {
