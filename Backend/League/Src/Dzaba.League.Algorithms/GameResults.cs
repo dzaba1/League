@@ -1,33 +1,19 @@
 ﻿using Dzaba.League.Contracts;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Dzaba.League.Algorithms
 {
-    public class GameResults<T> : IEnumerable<GameResultEntry<T>>
+    public class GameResults<T> : CompetitorsCollectionBase<T, GameResultType, GameResultEntry<T>>
         where T : IEquatable<T>
     {
-        public GameResults(Dictionary<T, GameResultType> dictionary)
+        public GameResults(Dictionary<T, GameResultType> dictionary) : base(dictionary)
         {
-            Require.NotNull(dictionary, nameof(dictionary));
-
-            Dictionary = dictionary;
         }
 
-        protected Dictionary<T, GameResultType> Dictionary { get; }
-
-        public IEnumerator<GameResultEntry<T>> GetEnumerator()
+        protected override GameResultEntry<T> BuildFromDictEntry(KeyValuePair<T, GameResultType> keyValuePair)
         {
-            return Dictionary
-                .Select(p => new GameResultEntry<T>(p.Key, p.Value))
-                .GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
+            return new GameResultEntry<T>(keyValuePair.Key, keyValuePair.Value);
         }
     }
 }

@@ -1,39 +1,18 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Dzaba.League.Algorithms
 {
-    public class Scores<T> : IEnumerable<ScoreEntry<T>>
+    public class Scores<T> : CompetitorsCollectionBase<T, int, ScoreEntry<T>>
         where T : IEquatable<T>
     {
-        public Scores(Dictionary<T, int> dictionary)
+        public Scores(Dictionary<T, int> dictionary) : base(dictionary)
         {
-            Require.NotNull(dictionary, nameof(dictionary));
-
-            Dictionary = dictionary;
         }
 
-        protected Dictionary<T, int> Dictionary { get; }
-
-        public IEnumerator<ScoreEntry<T>> GetEnumerator()
+        protected override ScoreEntry<T> BuildFromDictEntry(KeyValuePair<T, int> keyValuePair)
         {
-            return Dictionary
-                .Select(p => new ScoreEntry<T>(p.Key, p.Value))
-                .GetEnumerator();
+            return new ScoreEntry<T>(keyValuePair.Key, keyValuePair.Value);
         }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
-
-        public IReadOnlyDictionary<T, int> ToReadOnlyDictionary()
-        {
-            return Dictionary;
-        }
-
-        public int Count => Dictionary.Count;
     }
 }
