@@ -11,19 +11,22 @@ namespace Dzaba.League.Algorithms
         public int[] Scores { get; set; }
     }
 
+    public interface IReadOnlyMatch<T>
+        where T : IEquatable<T>
+    {
+        DateTime TimePlayed { get; }
+        IEnumerable<Scores<T>> Sets { get; }
+        IEnumerable<T> Competitors { get; }
+    }
+
     public sealed class Match<T>
         where T : IEquatable<T>
     {
-        public Match(DateTime time, IEnumerable<MatchScore<T>> scores)
+        public Match(DateTime time)
         {
-            Require.NotNull(scores, nameof(scores));
-
-            Time = time;
-            Scores = scores.ToArray();
+            TimePlayed = time;
         }
 
-        public DateTime Time { get; }
-
-        public MatchScore<T>[] Scores { get; }
+        public DateTime TimePlayed { get; }
     }
 }

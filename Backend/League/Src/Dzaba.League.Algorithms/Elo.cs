@@ -6,7 +6,7 @@ namespace Dzaba.League.Algorithms
 {
     public static class Elo
     {
-        public static Ranking<T> Build<T>(IEnumerable<Match<T>> matches, ScoreCheckOptions scoreCheckOptions, EloOptions eloOptions)
+        public static Ranking<T> Build<T>(IEnumerable<IReadOnlyMatch<T>> matches, ScoreCheckOptions scoreCheckOptions, EloOptions eloOptions)
             where T : IEquatable<T>
         {
             Require.NotNull(matches, nameof(matches));
@@ -22,22 +22,25 @@ namespace Dzaba.League.Algorithms
             return new Ranking<T>(ranking);
         }
 
-        private static void HandleMatch<T>(Dictionary<T, double> ranking, Match<T> match,
+        private static void HandleMatch<T>(Dictionary<T, double> ranking, IReadOnlyMatch<T> match,
             ScoreCheckOptions scoreCheckOptions, EloOptions eloOptions)
             where T : IEquatable<T>
         {
             var values = new Dictionary<T, double>();
             var sumFactor = 0.0;
-            var scoreTypes = Check.GameResults(scores, scoreCheckOptions);
+            var scoreTypes = Check.MatchResults(match, scoreCheckOptions);
 
-            foreach (var score in scores)
+            foreach (var set in match.Sets)
             {
-                if (scoreTypes.ContainsCompetitor(score.CompetitorId))
+                foreach (var score in set)
                 {
-                    var value = GetCurrentRating(ranking, score.CompetitorId, eloOptions);
-                    value = Transform(eloOptions, value);
-                    values.Add(score.CompetitorId, value);
-                    sumFactor += value;
+                    if (scoreTypes.ContainsCompetitor(score.CompetitorId))
+                    {
+                        var value = GetCurrentRating(ranking, score.CompetitorId, eloOptions);
+                        value = Transform(eloOptions, value);
+                        values.Add(score.CompetitorId, value);
+                        sumFactor += value;
+                    }
                 }
             }
 

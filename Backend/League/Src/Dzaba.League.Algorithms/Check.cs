@@ -73,5 +73,38 @@ namespace Dzaba.League.Algorithms
 
             return new GameResults<T>(result);
         }
+
+        public static GameResults<T> MatchResults<T>(IReadOnlyMatch<T> match, ScoreCheckOptions options)
+            where T : IEquatable<T>
+        {
+            Require.NotNull(match, nameof(match));
+
+            var scores = MergeSets(match.Sets);
+            return GameResults(scores, options);
+        }
+
+        private static Scores<T> MergeSets<T>(IEnumerable<Scores<T>> sets)
+            where T : IEquatable<T>
+        {
+            var dict = new Dictionary<T, int>();
+
+            foreach (var matchSetScore in sets)
+            {
+                foreach (var setScore in matchSetScore)
+                {
+                    if (dict.TryGetValue(setScore.CompetitorId, out int currentValue))
+                    {
+                        dict[setScore.CompetitorId] = currentValue + setScore.Score;
+                    }
+                    else
+                    {
+                        currentValue = setScore.Score;
+                        dict.Add(setScore.CompetitorId, currentValue);
+                    }
+                }
+            }
+
+            return new Scores<T>(dict);
+        }
     }
 }
