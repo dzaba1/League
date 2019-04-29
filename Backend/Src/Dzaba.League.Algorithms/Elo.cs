@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Dzaba.League.Contracts;
 using Dzaba.Utils;
 
@@ -15,7 +16,7 @@ namespace Dzaba.League.Algorithms
 
             var ranking = new Dictionary<T, double>();
 
-            foreach (var match in matches)
+            foreach (var match in matches.OrderBy(m => m.TimePlayed))
             {
                 HandleMatch(ranking, match, scoreCheckOptions, eloOptions);
             }
@@ -31,18 +32,12 @@ namespace Dzaba.League.Algorithms
             var sumFactor = 0.0;
             var scoreTypes = Check.MatchResults(match, scoreCheckOptions);
 
-            foreach (var set in match.Sets)
+            foreach (var gameResult in scoreTypes)
             {
-                foreach (var score in set)
-                {
-                    if (scoreTypes.ContainsCompetitor(score.CompetitorId))
-                    {
-                        var value = GetCurrentRating(ranking, score.CompetitorId, eloOptions);
-                        value = Transform(eloOptions, value);
-                        values.Add(score.CompetitorId, value);
-                        sumFactor += value;
-                    }
-                }
+                var value = GetCurrentRating(ranking, gameResult.CompetitorId, eloOptions);
+                value = Transform(eloOptions, value);
+                values.Add(gameResult.CompetitorId, value);
+                sumFactor += value;
             }
 
             foreach (var value in values)
