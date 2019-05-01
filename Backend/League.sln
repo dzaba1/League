@@ -13,11 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dzaba.League.DataAccess.Con
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{4823FB3D-2D48-4A7E-BC12-EBA5CF135E5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.League.DataAccess.EntityFramework", "Src\Dzaba.League.DataAccess.EntityFramework\Dzaba.League.DataAccess.EntityFramework.csproj", "{7CA45F41-B880-40A3-B38D-13DC7F2465D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dzaba.League.DataAccess.EntityFramework", "Src\Dzaba.League.DataAccess.EntityFramework\Dzaba.League.DataAccess.EntityFramework.csproj", "{7CA45F41-B880-40A3-B38D-13DC7F2465D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.League.DataAccess.EntityFramework.Sqlite", "Src\Dzaba.League.DataAccess.EntityFramework.Sqlite\Dzaba.League.DataAccess.EntityFramework.Sqlite.csproj", "{B30960F7-E200-4626-9958-FD1AE647A8B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dzaba.League.DataAccess.EntityFramework.Sqlite", "Src\Dzaba.League.DataAccess.EntityFramework.Sqlite\Dzaba.League.DataAccess.EntityFramework.Sqlite.csproj", "{B30960F7-E200-4626-9958-FD1AE647A8B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.League", "Src\Dzaba.League\Dzaba.League.csproj", "{F842EE13-5DC4-4578-AFBD-311B3A5F9313}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dzaba.League", "Src\Dzaba.League\Dzaba.League.csproj", "{F842EE13-5DC4-4578-AFBD-311B3A5F9313}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.League.IntegrationTests", "Src\Dzaba.League.IntegrationTests\Dzaba.League.IntegrationTests.csproj", "{74C664A0-28C5-4FFE-8387-6A9291F7863A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{F842EE13-5DC4-4578-AFBD-311B3A5F9313}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F842EE13-5DC4-4578-AFBD-311B3A5F9313}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F842EE13-5DC4-4578-AFBD-311B3A5F9313}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74C664A0-28C5-4FFE-8387-6A9291F7863A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74C664A0-28C5-4FFE-8387-6A9291F7863A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74C664A0-28C5-4FFE-8387-6A9291F7863A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74C664A0-28C5-4FFE-8387-6A9291F7863A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
