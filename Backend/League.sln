@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.League.DataAccess.Ent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.League.DataAccess.EntityFramework.Sqlite", "Src\Dzaba.League.DataAccess.EntityFramework.Sqlite\Dzaba.League.DataAccess.EntityFramework.Sqlite.csproj", "{B30960F7-E200-4626-9958-FD1AE647A8B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.League", "Src\Dzaba.League\Dzaba.League.csproj", "{F842EE13-5DC4-4578-AFBD-311B3A5F9313}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{B30960F7-E200-4626-9958-FD1AE647A8B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B30960F7-E200-4626-9958-FD1AE647A8B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B30960F7-E200-4626-9958-FD1AE647A8B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F842EE13-5DC4-4578-AFBD-311B3A5F9313}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F842EE13-5DC4-4578-AFBD-311B3A5F9313}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F842EE13-5DC4-4578-AFBD-311B3A5F9313}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F842EE13-5DC4-4578-AFBD-311B3A5F9313}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
