@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.League.Algorithms", "Src\Dzaba.League.Algorithms\Dzaba.League.Algorithms.csproj", "{F971C766-CBF7-4F5E-9905-F8D766C2B465}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dzaba.League.Algorithms", "Src\Dzaba.League.Algorithms\Dzaba.League.Algorithms.csproj", "{F971C766-CBF7-4F5E-9905-F8D766C2B465}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.League.Contracts", "Src\Dzaba.League.Contracts\Dzaba.League.Contracts.csproj", "{C2CD8831-183C-410D-98F2-BD5245E942C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dzaba.League.Contracts", "Src\Dzaba.League.Contracts\Dzaba.League.Contracts.csproj", "{C2CD8831-183C-410D-98F2-BD5245E942C2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.League.Algorithms.Tests", "Src\Dzaba.League.Algorithms.Tests\Dzaba.League.Algorithms.Tests.csproj", "{CF0ACC5B-CD70-4F73-8ACC-9263408FF907}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dzaba.League.DataAccess.Contracts", "Src\Dzaba.League.DataAccess.Contracts\Dzaba.League.DataAccess.Contracts.csproj", "{213DBB75-E4F7-4394-A73D-AAC3A43C9850}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{4823FB3D-2D48-4A7E-BC12-EBA5CF135E5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +31,16 @@ Global
 		{CF0ACC5B-CD70-4F73-8ACC-9263408FF907}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF0ACC5B-CD70-4F73-8ACC-9263408FF907}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF0ACC5B-CD70-4F73-8ACC-9263408FF907}.Release|Any CPU.Build.0 = Release|Any CPU
+		{213DBB75-E4F7-4394-A73D-AAC3A43C9850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{213DBB75-E4F7-4394-A73D-AAC3A43C9850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{213DBB75-E4F7-4394-A73D-AAC3A43C9850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{213DBB75-E4F7-4394-A73D-AAC3A43C9850}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{213DBB75-E4F7-4394-A73D-AAC3A43C9850} = {4823FB3D-2D48-4A7E-BC12-EBA5CF135E5A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C7F29DC8-1EB8-406D-BB75-C61B3626EE3E}
