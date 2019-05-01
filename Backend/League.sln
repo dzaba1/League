@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dzaba.League.DataAccess.Con
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{4823FB3D-2D48-4A7E-BC12-EBA5CF135E5A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.League.DataAccess.EntityFramework", "Src\Dzaba.League.DataAccess.EntityFramework\Dzaba.League.DataAccess.EntityFramework.csproj", "{7CA45F41-B880-40A3-B38D-13DC7F2465D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,12 +37,17 @@ Global
 		{213DBB75-E4F7-4394-A73D-AAC3A43C9850}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{213DBB75-E4F7-4394-A73D-AAC3A43C9850}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{213DBB75-E4F7-4394-A73D-AAC3A43C9850}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CA45F41-B880-40A3-B38D-13DC7F2465D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CA45F41-B880-40A3-B38D-13DC7F2465D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CA45F41-B880-40A3-B38D-13DC7F2465D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CA45F41-B880-40A3-B38D-13DC7F2465D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{213DBB75-E4F7-4394-A73D-AAC3A43C9850} = {4823FB3D-2D48-4A7E-BC12-EBA5CF135E5A}
+		{7CA45F41-B880-40A3-B38D-13DC7F2465D0} = {4823FB3D-2D48-4A7E-BC12-EBA5CF135E5A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C7F29DC8-1EB8-406D-BB75-C61B3626EE3E}
