@@ -31,4 +31,10 @@
     <ProjectReference Include="..\Dzaba.League\Dzaba.League.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Dzaba.Utils">
+      <HintPath>..\..\3rdPartyTemp\Dzaba.Utils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
