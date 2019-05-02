@@ -8,6 +8,29 @@ namespace Dzaba.League.Algorithms
 {
     public static class Elo
     {
+        public static Ranking<T> Probabilities<T>(Ranking<T> gameCompetitors, EloOptions eloOptions)
+            where T : IEquatable<T>
+        {
+            Require.NotNull(gameCompetitors, nameof(gameCompetitors));
+            Require.NotNull(eloOptions, nameof(eloOptions));
+
+            var sumFactor = 0.0;
+            var values = gameCompetitors.ToDictionary(r => r.CompetitorId, r => r.Rating);
+
+            foreach (var rating in gameCompetitors)
+            {
+                var value = GetCurrentRating(values, rating.CompetitorId, eloOptions);
+                value = Transform(eloOptions, value);
+                values[rating.CompetitorId] = value;
+                sumFactor += value;
+            }
+
+            var dict = values
+                .Select(v => new {Id = v.Key, Value = v.Value / sumFactor})
+                .ToDictionary(v => v.Id, v => v.Value);
+            return new Ranking<T>(dict);
+        }
+
         public static Ranking<T> Build<T>(IEnumerable<IReadOnlyMatch<T>> matches, ScoreCheckOptions scoreCheckOptions, EloOptions eloOptions)
             where T : IEquatable<T>
         {
@@ -28,23 +51,18 @@ namespace Dzaba.League.Algorithms
             ScoreCheckOptions scoreCheckOptions, EloOptions eloOptions)
             where T : IEquatable<T>
         {
-            var values = new Dictionary<T, double>();
-            var sumFactor = 0.0;
+            var matchRanking = new Ranking<T>(match.Competitors
+                .ToDictionary(c => c, c => GetCurrentRating(ranking, c, eloOptions)));
+
+            var probabilities = Probabilities(matchRanking, eloOptions);
             var scoreTypes = Check.MatchResults(match, scoreCheckOptions);
 
-            foreach (var gameResult in scoreTypes)
+            foreach (var probability in probabilities)
             {
-                var value = GetCurrentRating(ranking, gameResult.CompetitorId, eloOptions);
-                value = Transform(eloOptions, value);
-                values.Add(gameResult.CompetitorId, value);
-                sumFactor += value;
-            }
-
-            foreach (var value in values)
-            {
-                var newValue = GetCurrentRating(ranking, value.Key, eloOptions) +
-                               eloOptions.K * (GetSFactor(scoreTypes[value.Key], eloOptions) - value.Value / sumFactor);
-                UpdateRating(ranking, value.Key, newValue);
+                var currentRating = GetCurrentRating(ranking, probability.CompetitorId, eloOptions);
+                var actual = GetSFactor(scoreTypes[probability.CompetitorId], eloOptions);
+                var newValue = currentRating + eloOptions.K * (actual - probability.Rating);
+                UpdateRating(ranking, probability.CompetitorId, newValue);
             }
         }
 
