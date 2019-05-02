@@ -80,32 +80,30 @@ namespace Dzaba.League.Algorithms
         {
             Require.NotNull(match, nameof(match));
 
-            var scores = MergeSets(match.Sets);
-            return GameResults(scores, options);
-        }
+            var setResults = match.Sets
+                .Select(s => GameResults(s, options));
 
-        private static Scores<T> MergeSets<T>(IEnumerable<Scores<T>> sets)
-            where T : IEquatable<T>
-        {
-            var dict = new Dictionary<T, int>();
+            var dict = match.Competitors.ToDictionary(i => i, i => GameResultType.Draw);
 
-            foreach (var matchSetScore in sets)
+            foreach (var setResult in setResults)
             {
-                foreach (var setScore in matchSetScore)
+                foreach (var result in setResult)
                 {
-                    if (dict.TryGetValue(setScore.CompetitorId, out int currentValue))
+                    var value = (int) dict[result.CompetitorId] + (int) result.Type;
+                    if (value < -1)
                     {
-                        dict[setScore.CompetitorId] = currentValue + setScore.Score;
+                        value = -1;
                     }
-                    else
+                    else if (value > 1)
                     {
-                        currentValue = setScore.Score;
-                        dict.Add(setScore.CompetitorId, currentValue);
+                        value = 1;
                     }
+
+                    dict[result.CompetitorId] = (GameResultType) value;
                 }
             }
 
-            return new Scores<T>(dict);
+            return new GameResults<T>(dict);
         }
     }
 }

@@ -1,7 +1,9 @@
 ﻿namespace Dzaba.League.Contracts
 {
-    public enum GameResultType : byte
+    public enum GameResultType : sbyte
     {
-        Lost, Draw, Won
+        Lost = -1,
+        Draw = 0,
+        Won = 1
     }
 }
