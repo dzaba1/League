@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dzaba.League.DataAccess.Ent
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dzaba.League", "Src\Dzaba.League\Dzaba.League.csproj", "{F842EE13-5DC4-4578-AFBD-311B3A5F9313}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.League.IntegrationTests", "Src\Dzaba.League.IntegrationTests\Dzaba.League.IntegrationTests.csproj", "{74C664A0-28C5-4FFE-8387-6A9291F7863A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dzaba.League.IntegrationTests", "Src\Dzaba.League.IntegrationTests\Dzaba.League.IntegrationTests.csproj", "{74C664A0-28C5-4FFE-8387-6A9291F7863A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.AspNet.Jwt", "Src\Dzaba.AspNet.Jwt\Dzaba.AspNet.Jwt.csproj", "{58E3A2A3-F970-4BD1-BEF9-3D4546E88059}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{74C664A0-28C5-4FFE-8387-6A9291F7863A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74C664A0-28C5-4FFE-8387-6A9291F7863A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74C664A0-28C5-4FFE-8387-6A9291F7863A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58E3A2A3-F970-4BD1-BEF9-3D4546E88059}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58E3A2A3-F970-4BD1-BEF9-3D4546E88059}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58E3A2A3-F970-4BD1-BEF9-3D4546E88059}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58E3A2A3-F970-4BD1-BEF9-3D4546E88059}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
