@@ -13,22 +13,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="2.2.0" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Dzaba.AspNet.Auth\Dzaba.AspNet.Auth.csproj" />
     <ProjectReference Include="..\Dzaba.AspNet.Contracts\Dzaba.AspNet.Contracts.csproj" />
+    <ProjectReference Include="..\Dzaba.AspNet.PocoToDto\Dzaba.AspNet.PocoToDto.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="Dzaba.Utils">
       <HintPath>..\..\3rdPartyTemp\Dzaba.Utils.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

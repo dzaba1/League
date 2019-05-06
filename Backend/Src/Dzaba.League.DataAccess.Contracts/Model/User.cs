@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations.Schema;
+using Dzaba.AspNet.PocoToDto;
 
 namespace Dzaba.League.DataAccess.Contracts.Model
 {

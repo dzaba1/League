@@ -2,6 +2,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Dzaba.AspNet.Auth;
 using Dzaba.AspNet.Contracts;
 using Dzaba.Utils;
 using Microsoft.AspNetCore.Identity;
@@ -9,11 +10,6 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace Dzaba.AspNet.Jwt
 {
-    public interface ITokenGenerator
-    {
-        TokenData Generate<T>(IdentityUser<T> user) where T : IEquatable<T>;
-    }
-
     internal sealed class TokenGenerator : ITokenGenerator
     {
         private readonly IDateTimeProvider dateTimeProvider;

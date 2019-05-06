@@ -5,6 +5,7 @@ using Dzaba.Utils;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Dzaba.AspNet.Auth;
 
 namespace Dzaba.AspNet.Jwt
 {

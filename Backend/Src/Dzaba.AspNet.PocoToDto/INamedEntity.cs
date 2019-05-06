@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Dzaba.League.DataAccess.Contracts.Model
+namespace Dzaba.AspNet.PocoToDto
 {
     public interface INamedEntity<T> : IEntity<T>
         where T : IEquatable<T>

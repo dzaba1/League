@@ -25,6 +25,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dzaba.AspNet.Jwt", "Src\Dza
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.AspNet.Contracts", "Src\Dzaba.AspNet.Contracts\Dzaba.AspNet.Contracts.csproj", "{D24337AC-6720-4413-BE56-B4CEDD23C566}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.AspNet.Auth", "Src\Dzaba.AspNet.Auth\Dzaba.AspNet.Auth.csproj", "{9C2AA651-73E4-419A-8A4B-FF94098B977E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.AspNet.PocoToDto", "Src\Dzaba.AspNet.PocoToDto\Dzaba.AspNet.PocoToDto.csproj", "{9607A1AA-B40E-4D01-83A1-15B3CBE867A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +75,14 @@ Global
 		{D24337AC-6720-4413-BE56-B4CEDD23C566}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D24337AC-6720-4413-BE56-B4CEDD23C566}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D24337AC-6720-4413-BE56-B4CEDD23C566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C2AA651-73E4-419A-8A4B-FF94098B977E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C2AA651-73E4-419A-8A4B-FF94098B977E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C2AA651-73E4-419A-8A4B-FF94098B977E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C2AA651-73E4-419A-8A4B-FF94098B977E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9607A1AA-B40E-4D01-83A1-15B3CBE867A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9607A1AA-B40E-4D01-83A1-15B3CBE867A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9607A1AA-B40E-4D01-83A1-15B3CBE867A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9607A1AA-B40E-4D01-83A1-15B3CBE867A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
