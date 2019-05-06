@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Dzaba.AspNet.Jwt
+namespace Dzaba.AspNet.Contracts
 {
     public class TokenData
     {

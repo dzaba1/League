@@ -1,4 +1,4 @@
-﻿namespace Dzaba.League.Contracts
+﻿namespace Dzaba.AspNet.Contracts
 {
     public class Link<T>
     {
