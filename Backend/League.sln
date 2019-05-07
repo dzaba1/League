@@ -23,11 +23,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dzaba.League.IntegrationTes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dzaba.AspNet.Jwt", "Src\Dzaba.AspNet.Jwt\Dzaba.AspNet.Jwt.csproj", "{58E3A2A3-F970-4BD1-BEF9-3D4546E88059}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.AspNet.Contracts", "Src\Dzaba.AspNet.Contracts\Dzaba.AspNet.Contracts.csproj", "{D24337AC-6720-4413-BE56-B4CEDD23C566}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dzaba.AspNet.Contracts", "Src\Dzaba.AspNet.Contracts\Dzaba.AspNet.Contracts.csproj", "{D24337AC-6720-4413-BE56-B4CEDD23C566}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.AspNet.Auth", "Src\Dzaba.AspNet.Auth\Dzaba.AspNet.Auth.csproj", "{9C2AA651-73E4-419A-8A4B-FF94098B977E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dzaba.AspNet.Auth", "Src\Dzaba.AspNet.Auth\Dzaba.AspNet.Auth.csproj", "{9C2AA651-73E4-419A-8A4B-FF94098B977E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.AspNet.PocoToDto", "Src\Dzaba.AspNet.PocoToDto\Dzaba.AspNet.PocoToDto.csproj", "{9607A1AA-B40E-4D01-83A1-15B3CBE867A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dzaba.AspNet.PocoToDto", "Src\Dzaba.AspNet.PocoToDto\Dzaba.AspNet.PocoToDto.csproj", "{9607A1AA-B40E-4D01-83A1-15B3CBE867A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dzaba.AspNet.Common", "Src\Dzaba.AspNet.Common\Dzaba.AspNet.Common.csproj", "{5A2A66A9-77B3-4EBE-9F93-7399E47B6FC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +85,10 @@ Global
 		{9607A1AA-B40E-4D01-83A1-15B3CBE867A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9607A1AA-B40E-4D01-83A1-15B3CBE867A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9607A1AA-B40E-4D01-83A1-15B3CBE867A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A2A66A9-77B3-4EBE-9F93-7399E47B6FC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A2A66A9-77B3-4EBE-9F93-7399E47B6FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A2A66A9-77B3-4EBE-9F93-7399E47B6FC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A2A66A9-77B3-4EBE-9F93-7399E47B6FC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

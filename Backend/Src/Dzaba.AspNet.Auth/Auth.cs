@@ -7,15 +7,14 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Dzaba.AspNet.Auth
 {
-    public interface IAuth<TKey>
-        where TKey : IEquatable<TKey>
+    public interface IAuth
     {
-        Task<UserInfo<TKey>> Register(string email, string password);
-        Task<UserInfo<TKey>> Login(string email, string password);
+        Task<UserInfo<string>> Register(string email, string password);
+        Task<UserInfo<string>> Login(string email, string password);
     }
 
-    internal sealed class Auth<TUser, TKey> : IAuth<TKey>
-        where TKey : IEquatable<TKey>
+    internal sealed class Auth<TUser, TKey> : IAuth
+        where TKey : IEquatable<TKey>, IConvertible
         where TUser : IdentityUser<TKey>
     {
         private readonly ISignInManager<TUser, TKey> signInManager;
@@ -35,7 +34,7 @@ namespace Dzaba.AspNet.Auth
             this.userDal = userDal;
         }
 
-        public async Task<UserInfo<TKey>> Login(string email, string password)
+        public async Task<UserInfo<string>> Login(string email, string password)
         {
             Require.NotEmpty(email, nameof(email));
             Require.NotEmpty(password, nameof(password));
@@ -44,20 +43,25 @@ namespace Dzaba.AspNet.Auth
             var user = await userDal.GetUserByNameAsync(email);
             var token = tokenGenerator.Generate(user);
 
-            return new UserInfo<TKey>
+            return new UserInfo<string>
             {
                 User = BuildUserLink(user),
                 TokenData = token
             };
         }
 
-        private NamedLink<TKey> BuildUserLink(TUser user)
+        private NamedLink<string> BuildUserLink(TUser user)
         {
             var url = string.Format(Routes.AuthControllerRouteIdFormat, user.Id);
-            return user.ToLink(url);
+            return new NamedLink<string>
+            {
+                Id = user.Id.ToString(),
+                Name = user.UserName,
+                Url = url
+            };
         }
 
-        public async Task<UserInfo<TKey>> Register(string email, string password)
+        public async Task<UserInfo<string>> Register(string email, string password)
         {
             Require.NotEmpty(email, nameof(email));
             Require.NotEmpty(password, nameof(password));
@@ -66,7 +70,7 @@ namespace Dzaba.AspNet.Auth
             await signInManager.SignInAsync(user, false);
             var token = tokenGenerator.Generate(user);
 
-            return new UserInfo<TKey>
+            return new UserInfo<string>
             {
                 User = BuildUserLink(user),
                 TokenData = token
