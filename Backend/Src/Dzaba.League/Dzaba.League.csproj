@@ -22,6 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Dzaba.AspNet.Auth\Dzaba.AspNet.Auth.csproj" />
+    <ProjectReference Include="..\Dzaba.AspNet.Common\Dzaba.AspNet.Common.csproj" />
+    <ProjectReference Include="..\Dzaba.AspNet.Contracts\Dzaba.AspNet.Contracts.csproj" />
+    <ProjectReference Include="..\Dzaba.AspNet.Jwt\Dzaba.AspNet.Jwt.csproj" />
+    <ProjectReference Include="..\Dzaba.AspNet.PocoToDto\Dzaba.AspNet.PocoToDto.csproj" />
     <ProjectReference Include="..\Dzaba.League.Algorithms\Dzaba.League.Algorithms.csproj" />
     <ProjectReference Include="..\Dzaba.League.Contracts\Dzaba.League.Contracts.csproj" />
     <ProjectReference Include="..\Dzaba.League.DataAccess.Contracts\Dzaba.League.DataAccess.Contracts.csproj" />

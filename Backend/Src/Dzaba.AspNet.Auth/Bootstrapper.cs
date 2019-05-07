@@ -18,7 +18,7 @@ namespace Dzaba.AspNet.Auth
             container.AddTransient<IAuth, Auth<TUser, TKey>>();
         }
 
-        public static void RegisterWebApiPart(this IMvcBuilder mvcBuilder)
+        public static void RegisterAuthWebApiPart(this IMvcBuilder mvcBuilder)
         {
             mvcBuilder.AddApplicationPart(typeof(Bootstrapper).Assembly)
                 .AddControllersAsServices();

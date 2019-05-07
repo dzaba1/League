@@ -1,4 +1,5 @@
-﻿using Dzaba.Utils;
+﻿using Dzaba.AspNet.Auth;
+using Dzaba.Utils;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,7 +11,9 @@ namespace Dzaba.League
         {
             Require.NotNull(container, nameof(container));
 
-            container.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            container.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .RegisterAuthWebApiPart();
         }
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using Dzaba.AspNet.Auth.Controllers;
 
 namespace Dzaba.League.IntegrationTests
 {
@@ -21,6 +22,7 @@ namespace Dzaba.League.IntegrationTests
         public static IEnumerable<Type> GetTransientServices()
         {
             yield return typeof(IDbInitializer);
+            yield return typeof(AuthController);
         }
 
         [TestCaseSource(nameof(GetTransientServices))]

@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using Dzaba.AspNet.Auth;
+using Dzaba.AspNet.Jwt;
+using Dzaba.League.DataAccess.Contracts.Model;
 
 namespace Dzaba.League
 {
@@ -22,6 +25,8 @@ namespace Dzaba.League
         {
             services.RegisterEntityFrameworkDataAccess();
             services.RegisterSqlite();
+            services.RegisterIdentityAuth<User, long>();
+            services.RegisterJwtAuth();
             services.RegisterWebApi();
 
             return services.BuildServiceProvider();
